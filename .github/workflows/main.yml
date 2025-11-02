@@ -7,7 +7,7 @@ on: [push, workflow_dispatch]
 jobs:
   build:
     runs-on: self-hosted
-    env: 
+    env:
       DOTNET_INSTALL_DIR: /home/actions-runner/dotnet
     steps:
       - name: Check out repository code
@@ -23,7 +23,7 @@ jobs:
           dotnet build Deo.Backend
           dotnet build Deo.Frontend
       - name: Upload artifacts
-        uses: actions/upload-artifacts@v5
+        uses: actions/upload-artifact@v5
         with:
           name: build
           path: |
